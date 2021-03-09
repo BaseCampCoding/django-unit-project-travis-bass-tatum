@@ -132,6 +132,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 AUTH_USER_MODEL = 'accounts.Account'
+AUTHENTICATION_BACKENDS = ( 
+    'django.contrib.auth.backends.AllowAllUsersModelBackend', 
+    'account.backends.CaseInsensitiveModelBackend',
+    )
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
 STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
