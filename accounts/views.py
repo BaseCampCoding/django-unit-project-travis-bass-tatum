@@ -1,7 +1,8 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from django.contrib.auth import login, authenticate
-from accounts.forms import RegistrationForm
+from django.contrib.auth import login, authenticate, logout
+from accounts.forms import RegistrationForm, AccountAuthenticationForm
+
 
 def register_view(request, *args, **kwargs):
     user = request.user
@@ -36,9 +37,23 @@ def login_view(request, *args, **kwargs):
 
     user = request.user
     if user.is_authenticated: 
-        return render(request, "home.html", context)
+        return render(request, "personal/home.html", context)
 
     destination = get_redirect_if_exists(request)
+    if request.POST:
+        form = AccountAuthenticationForm(request.POST)
+        if form.is_valid():
+            email = request.POST['email']
+            password = request.POST['password']
+            user = authenticate(email=email, password=password)
+            if user:
+                login(request, user)
+                if destination:
+                    return redirect(destination)
+                return redirect("home")
+    else:
+        form = AccountAuthenticationForm()
+    context['login_form'] = form       
     return render(request, 'register/login.html', context)
 def get_redirect_if_exists(request):
     redirect = 'home'
