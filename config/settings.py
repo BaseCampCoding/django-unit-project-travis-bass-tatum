@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ramble',
     'personal',
     'accounts',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +77,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+ASGI_APPLICATION = "config.asgi.application"
 
 
 # Database
