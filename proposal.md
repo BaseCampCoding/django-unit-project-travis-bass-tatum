@@ -38,7 +38,7 @@
 
 ## How will you use the content from this Unit?
 
-- We're going to use the content from the book to prepare a chat app that allows users to communicate in public groups, private groups, and private 1 on 1s. 
+- We're going to use the content from the book to prepare a chat app that allows users to communicate in public groups, private groups, and private 1 on 1 chats. 
 
 ## Students:
 - Travis Alexander
