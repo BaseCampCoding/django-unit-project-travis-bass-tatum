@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="user-entry">
+        {{object.profile_image}} <p>{{object.username}}</p>
+        <p>{{object.last_login}}</p>
+        <p>{{object.is_active}}</p>
+        <p>{{object.date_joined}}</p>
+        <p>{{object.hide_email}} {{object.email}}</p>
+    </div>
+
+{% endblock content %}
