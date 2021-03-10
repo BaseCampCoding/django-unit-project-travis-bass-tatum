@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 {% block content %}
 {% load static %}
 <style type="text/css">
@@ -31,10 +32,10 @@
                         <div class="d-flex flex-column pb-3">
                             <img class="img-fluid mx-auto d-block" src="{% static 'ramble_logo.png'%}" alt="ramble-logo" width="72" height="72">
                         </div>
-                        <input type="email" name="email" id="InputEmail" class="form-control" placeholder="Email address" required autofocus>
-                        <input type="text" name="username" id="InputUsername" class="form-control" placeholder="Username" required autofocus>
-                        <input type="password1" name="password1" id="InputPassword1" class="form-control" placeholder="Password" required autofocus>
-                        <input type="password2" name="password2" id="InputPassword2" class="form-control" placeholder="Confirm Password" required autofocus>
+                        <input type="email" name="email" id="InputEmail" class="form-control my-3" placeholder="Email address" required autofocus>
+                        <input type="text" name="username" id="InputUsername" class="form-control my-3" placeholder="Username" required autofocus>
+                        <input type="password1" name="password1" id="InputPassword1" class="form-control my-3" placeholder="Password" required autofocus>
+                        <input type="password2" name="password2" id="InputPassword2" class="form-control my-3" placeholder="Confirm Password" required autofocus>
                         {% for field in register_form %}
                         <p>
                             {% for error in fields.error %}
@@ -47,7 +48,9 @@
                             <p>{{ register.non_field_forms }}</p>
                         </div>
                         {% endif %}
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+                        <div class="text-center">
+                            <button class="btn  btn-md btn-primary btn-block" type="submit">Register</button>
+                        </div>
                     </form>
                 </div>
             </div>

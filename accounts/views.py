@@ -36,12 +36,12 @@ def login_view(request, *args, **kwargs):
 
     user = request.user
     if user.is_authenticated: 
-        return render(request, "home.html")
+        return render(request, "home.html", context)
 
     destination = get_redirect_if_exists(request)
     return render(request, 'register/login.html', context)
 def get_redirect_if_exists(request):
-    redirect = None
+    redirect = 'home'
     if request.GET:
         if request.GET.get("next"):
             redirect = str(request.GET.get("next"))

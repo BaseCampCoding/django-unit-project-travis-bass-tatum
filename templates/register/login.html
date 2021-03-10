@@ -42,7 +42,13 @@
                         </div>
                         {% endif %}
                         <br>
-                        <button class="btn btn-md btn-center btn-primary btn-block" type="submit">Log In</button>
+                        <div class="text-center">
+                            <form action="{% url 'home' %}" method="POST">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <button class="btn btn-md btn-center btn-primary btn-block" type="submit" >Log In</button>
+                            </form>
+                        </div>
                     </form>
                     <div class="d-flex flex-column my-4">
                         <a class="m-auto" href="#">Reset Password</a>
