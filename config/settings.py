@@ -134,7 +134,7 @@ USE_TZ = True
 AUTH_USER_MODEL = 'accounts.Account'
 AUTHENTICATION_BACKENDS = ( 
     'django.contrib.auth.backends.AllowAllUsersModelBackend', 
-    'account.backends.CaseInsensitiveModelBackend',
+    'accounts.backend.CaseInsensitiveModelBackEnd',
     )
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
