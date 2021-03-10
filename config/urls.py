@@ -19,7 +19,7 @@ from django.conf import settings
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.conf.urls.static import static
-
+import accounts.views
 from accounts.views import (
     register_view,
     login_view,
@@ -32,7 +32,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', login_view, name = "login"),
     path('logout/', logout_view, name = "logout"),
-    path('register/', register_view, name="register"),
+    path('signup/', accounts.views.register_view, name="signup"),
 
      
 ]

@@ -5,8 +5,9 @@ from accounts.forms import RegistrationForm
 
 def register_view(request, *args, **kwargs):
     user = request.user
-    if user.is_authenicated:
-        return HttpResponse(f"You are already authenicated as {user.email}.")
+    if user.is_authenticated:
+        return HttpResponse(f"You are already authenticated as {user.email}.")
+    
     context = {}
     if request.POST:
         form = RegistrationForm(request.POST)
@@ -24,7 +25,7 @@ def register_view(request, *args, **kwargs):
         else:
             context['registration_form'] = form
 
-    return render(request, 'accounts/register/signup.html', context)
+    return render(request, 'register/signup.html', context)
 
 def logout_view(request):
     logout(request)
@@ -35,9 +36,10 @@ def login_view(request, *args, **kwargs):
 
     user = request.user
     if user.is_authenticated: 
-        return redirect("home")
+        return render(request, "home.html")
 
     destination = get_redirect_if_exists(request)
+    return render(request, 'register/login.html', context)
 def get_redirect_if_exists(request):
     redirect = None
     if request.GET:
