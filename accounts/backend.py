@@ -6,11 +6,11 @@ class CaseInsensitiveModelBackEnd(ModelBackend):
         UserModel = get_user_model()
         if username is None:
             username = kwargs.get(UserModel.USERNAME_FIELD)
-        try:
-            case_insensitve_username_field = '{}__isexact'.format(UserModel.USERNAME_FIELD)
-            user = UserModel._default_manager.get(**{case_insensitve_username_field: username})
-        except UserModel.DoesNotExist:
-            UserModel().set_password(password)
+            try:
+                case_insensitve_username_field = '{}__isexact'.format(UserModel.USERNAME_FIELD)
+                user = UserModel._default_manager.get(**{case_insensitve_username_field: username})
+            except UserModel.DoesNotExist:
+                UserModel().set_password(password)
         else:
             if user.check_password(password) and self.user_can_authenticate(user):
                 return user
