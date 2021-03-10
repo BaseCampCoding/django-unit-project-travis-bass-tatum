@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Log In {% endblock title %}
-
 {% block content %}
     <style type="text/css">
         .card-signin {
@@ -21,15 +19,16 @@
             border-bottom-right-radius: 0;
         }
     </style>
-    <div class="container-fluid">
+    <div class="container-fluid my-4">
         <div class="row justify-content-center">
             <div class="card card-signin">
                 <div class="card-body">
                     <form class="form-sigin" method="POST">{% csrf_token %}
-                        <div class="d-flex flex-column pb-3">
+                        <div class="d-flex flex-column pb-4">
                             <img class="img-fluid mx-auto d-block" src="{% static 'ramble_logo.png'%}" alt="ramble-logo" width="72" height="72">
                         </div>
-                        <input type="email" name="email" id="InputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <input type="email" name="email" id="InputEmail" class="form-control my-3" placeholder="Email address" required autofocus>
+                        <input type="password" name="password" id="InputPassword" class="form-control" placeholder="Password" required autofocus>
                         {% for field in login_form %}
                         <p>
                             {% for error in fields.error %}
@@ -42,7 +41,8 @@
                             <p>{{ login_form.non_field_forms }}</p>
                         </div>
                         {% endif %}
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+                        <br>
+                        <button class="btn btn-md btn-center btn-primary btn-block" type="submit">Log In</button>
                     </form>
                     <div class="d-flex flex-column my-4">
                         <a class="m-auto" href="#">Reset Password</a>
