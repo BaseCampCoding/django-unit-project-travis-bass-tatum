@@ -34,8 +34,8 @@
                         </div>
                         <input type="email" name="email" id="InputEmail" class="form-control my-3" placeholder="Email address" required autofocus>
                         <input type="text" name="username" id="InputUsername" class="form-control my-3" placeholder="Username" required autofocus>
-                        <input type="password1" name="password1" id="InputPassword1" class="form-control my-3" placeholder="Password" required autofocus>
-                        <input type="password2" name="password2" id="InputPassword2" class="form-control my-3" placeholder="Confirm Password" required autofocus>
+                        <input type="password" name="password1" id="InputPassword1" class="form-control my-3" placeholder="Password" required autofocus>
+                        <input type="password" name="password2" id="InputPassword2" class="form-control my-3" placeholder="Confirm Password" required autofocus>
                         {% for field in register_form %}
                         <p>
                             {% for error in fields.error %}
@@ -49,7 +49,7 @@
                         </div>
                         {% endif %}
                         <div class="text-center">
-                            <button class="btn  btn-md btn-primary btn-block" type="submit">Register</button>
+                            <button class="btn  btn-md btn-primary btn-block" type="submit" href="{% url 'signup' %}" >Register</button>
                         </div>
                     </form>
                 </div>
