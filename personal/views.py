@@ -10,3 +10,8 @@ def home_screen_view(request):
 	context['debug'] = DEBUG
 	context['room_id'] = "1"
 	return render(request, "personal/home.html", context)
+
+def room(request, room_name):
+    return render(request, 'chat/room.html', {
+        'room_name': room_name
+    })

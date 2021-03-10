@@ -20,6 +20,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.conf.urls.static import static
 import accounts.views
+import personal.views
 from accounts.views import (
     register_view,
     login_view,
@@ -34,6 +35,6 @@ urlpatterns = [
     path('login/', login_view, name = "login"),
     path('logout/', logout_view, name = "logout"),
     path('signup/', accounts.views.register_view, name="signup"),
-
+    path('<str:room_name>/', personal.views.room, name='room'),
      
 ]
