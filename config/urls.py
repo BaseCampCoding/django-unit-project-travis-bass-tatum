@@ -20,21 +20,18 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.conf.urls.static import static
 import accounts.views
-import personal.views
-from accounts.views import (
-    register_view,
-    login_view,
-    logout_view,
+import ramble.views
+from ramble.views import (
+    HomeView,
+    SignUpView,
 
 )
 
 urlpatterns = [
-    path('', home_screen_view, name="home"),
+    path('', HomeView.as_view(), name="home"),
     path('profiles/', include("ramble.urls")),
     path('admin/', admin.site.urls),
-    path('login/', login_view, name = "login"),
-    path('logout/', logout_view, name = "logout"),
-    path('signup/', accounts.views.register_view, name="signup"),
-    path('<str:room_name>/', personal.views.room, name='room'),
+    path('signup/', SignUpView.as_view(), name="signup"),
+    path('<str:room_name>/', ramble.views.room, name='room'),
      
 ]
