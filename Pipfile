@@ -8,6 +8,7 @@ django = "==2.2.15"
 environs = {version = "==8.0.0", extras = ["django"]}
 psycopg2-binary = "==2.8.6"
 whitenoise = "*"
+pillow = "*"
 
 [dev-packages]
 
