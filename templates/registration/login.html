@@ -26,28 +26,8 @@
         <div class="card card-signin">
             <div class="card-body">
                 <form class="form-sigin" method="POST">{% csrf_token %}
-                    <div class="d-flex flex-column pb-4">
-                        <img class="img-fluid mx-auto d-block" src="{% static 'ramble_logo.png'%}" alt="ramble-logo"
-                            width="72" height="72">
-                    </div>
-                    <input type="email" name="email" id="InputEmail" class="form-control my-3"
-                        placeholder="Email address" required autofocus>
-                    <input type="password" name="password" id="InputPassword" class="form-control"
-                        placeholder="Password" required autofocus>
-                    {% for field in login_form %}
-                    <p>
-                        {% for error in fields.error %}
-                    <p style="color: red">{{ error }}</p>
-                    {% endfor %}
-                    </p>
-                    {% endfor %}
-                    {% if login_form.non_field_errors %}
-                    <div style="color: red">
-                        <p>{{ login_form.non_field_forms }}</p>
-                    </div>
-                    {% endif %}
-                    <br>
-                    <div class="text-center">
+                    {{ form.as_p }}
+
                         <button class="btn btn-md btn-center btn-primary btn-block" type="submit">Log In</button>
                     </div>
                 </form>

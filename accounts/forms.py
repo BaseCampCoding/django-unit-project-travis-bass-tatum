@@ -4,7 +4,7 @@ from .models import User
 
 
 class CustomUserCreationForm(UserCreationForm):
-	email = forms.EmailField(max_length=254, help_text='Required. Add a valid email address.')
+
 
 	class Meta(UserCreationForm):
 		model = User
