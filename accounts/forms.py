@@ -20,8 +20,8 @@ class CustomUserChangeForm(UserChangeForm):
 
 	
 
-class AccountUpdateForm(forms.ModelForm):
-
-    class Meta:
-        model = Account
-        fields = ('username', 'email', 'profile_image', 'hide_email' )
+# class CustomUserUpdateForm(UserUpdateForm):
+    
+#     class Meta:
+#         model = User
+#         fields = ('username', 'email', 'profile_image', 'hide_email' )
