@@ -1,13 +1,13 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from .models import CustomUser
+from .models import User
 
 
 class CustomUserCreationForm(UserCreationForm):
-	email = forms.EmailField(max_length=254, help_text='Required. Add a valid email address.')
+
 
 	class Meta(UserCreationForm):
-		model = CustomUser
+		model = User
 		fields = UserCreationForm.Meta.fields + ('email', 'username', 'password1', 'password2', )
 
 	
@@ -15,13 +15,13 @@ class CustomUserCreationForm(UserCreationForm):
 
 class CustomUserChangeForm(UserChangeForm):
 	class Meta:
-		model = CustomUser
+		model = User
 		fields = UserChangeForm.Meta.fields
 
 	
 
-class AccountUpdateForm(forms.ModelForm):
-
-    class Meta:
-        model = Account
-        fields = ('username', 'email', 'profile_image', 'hide_email' )
+# class CustomUserUpdateForm(UserUpdateForm):
+    
+#     class Meta:
+#         model = User
+#         fields = ('username', 'email', 'profile_image', 'hide_email' )

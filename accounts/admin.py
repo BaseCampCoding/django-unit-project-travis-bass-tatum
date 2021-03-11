@@ -1,18 +1,16 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import CustomUser
-from .forms import Custom 
+from .models import User
+from .forms import CustomUserCreationForm, CustomUserChangeForm 
 
 
 
 class CustomUserAdmin(UserAdmin):
-	list_display = ('email','username','date_joined', 'last_login', 'is_admin','is_staff')
-	search_fields = ('email','username',)
-	readonly_fields=('id', 'date_joined', 'last_login')
+	add_form = CustomUserCreationForm
+	form = CustomUserChangeForm
+	model = User
+	list_display = ['email', 'username', 'date_joined', 'last_login', 'is_admin', 'is_active', 'is_staff']
 
-	filter_horizontal = ()
-	list_filter = ()
-	fieldsets = ()
-
-
-admin.site.register(Account, AccountAdmin)
+	
+	
+admin.site.register(User, CustomUserAdmin)
