@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-DB_NAME = 'ramble_dev'
+DB_NAME = 'ramble_app'
 DB_USER = "django"
 DB_PASSWORD = "password"
 DATABASES = {
