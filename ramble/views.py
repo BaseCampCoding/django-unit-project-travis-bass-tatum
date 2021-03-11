@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from django.views.generic import (
+from django.views.generic.edit import (
     CreateView, 
     DeleteView,
     UpdateView,
@@ -26,6 +26,7 @@ class  UserDetailView(DetailView):
 
 class  UserUpdateView(UpdateView):
     model = User
+    fields = ('username', 'email', 'hide_email',)
     template_name = 'user_edit.html'
 
 class  UserDeleteView(DeleteView):

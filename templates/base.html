@@ -58,11 +58,7 @@
   </div>
 </nav>
     <main>
-  
     {% block content %}
-    {% if user.is_authenticated %}
-      Hi, {{ user.user }}
-      {% endif %}
     {% endblock content %}
     </main>
     <script 

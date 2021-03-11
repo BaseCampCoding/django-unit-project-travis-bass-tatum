@@ -11,4 +11,5 @@
 
 <a href="{% url 'user_edit' user.pk %}">Edit</a> |
 <a href="{% url 'user_delete' user.pk %}">Delete</a>
+<p>Back to <a href="{% url 'user_list' user.pk %}">User Page</a></p>
 {% endblock content %}
