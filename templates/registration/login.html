@@ -48,13 +48,7 @@
                     {% endif %}
                     <br>
                     <div class="text-center">
-                        <h2>Log in</h2>
-                        <form method="post">
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            <button class="btn btn-md btn-center btn-primary btn-block" type="submit">Log In</button>
-
-                        </form>
+                        <button class="btn btn-md btn-center btn-primary btn-block" type="submit">Log In</button>
                     </div>
                 </form>
                 <div class="d-flex flex-column my-4">

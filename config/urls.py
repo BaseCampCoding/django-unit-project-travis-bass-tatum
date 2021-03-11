@@ -30,8 +30,8 @@ urlpatterns = [
     path('', HomeView.as_view(), name="home"),
     path('profiles/', include("ramble.urls")),
     path('admin/', admin.site.urls),
-    path('signup/', ramble.views.SignUpView.as_view(), name="signup"),
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('signup/', SignUpView.as_view(), name="signup"),
+    path('registration/', include('django.contrib.auth.urls')),
     
      
 ]

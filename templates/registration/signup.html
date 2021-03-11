@@ -48,9 +48,12 @@
                             <p>{{ register.non_field_forms }}</p>
                         </div>
                         {% endif %}
-                        <div class="text-center">
-                            <button class="btn  btn-md btn-primary btn-block" type="submit" href="{% url 'signup' %}" >Register</button>
-                        </div>
+                        <form action="signup.html" method="POST">
+                            <div class="text-center">
+                                <button class="btn  btn-md btn-primary btn-block" type="submit" >Register</button>
+                        
+                            </div>
+                        </form>
                     </form>
                 </div>
             </div>
