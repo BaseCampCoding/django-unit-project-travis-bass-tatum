@@ -1,44 +1,37 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
-<style type="text/css">
-    .card-signin {
-            width: 100%;
-            max-width: 400px;
-            padding: 15px;
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+    {% block title %}Sign Up{% endblock title %}
+
+    <style>
+        .card-body {
             margin: auto;
+            padding: 15px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            
         }
-        .form-signin input[type="email"] {
-            margin-bottom: 10px;
-            border-bottom-right-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-        .form-signin input[type="text"] {
-            margin-bottom: 10px;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-        .form-signin input[type="password"] {
-            margin-bottom: -1px;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-</style>
-<div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="card card-signin">
-                <div class="card-body">
-                    <form class="form-sigin" method="POST">{% csrf_token %}
-                            {{ form.as_p }}
+    </style>
+    <body>
+
+        <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="card card-signin">
+                        <div class="card-body">
+                            <form class="form-sigin" method="POST">
+                                {% csrf_token %}
+                                {{ form|crispy }}
                                 <button class="btn  btn-md btn-primary btn-block" type="submit" >Register</button>
-                        
-                            </div>
-                        </form>
-                    </form>
+                                
+                
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-        </div>
-    </div>
-
+    </body>
 {% endblock content %}
