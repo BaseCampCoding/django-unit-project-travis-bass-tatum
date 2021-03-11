@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    'ramble',
     
+    'crispy_forms',
+    
+    'ramble',
     'accounts',
 ]
 
@@ -148,3 +150,4 @@ CHANNEL_LAYERS = {
         },
     },
 }
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
