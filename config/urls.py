@@ -32,6 +32,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('signup/', SignUpView.as_view(), name="signup"),
     path('registration/', include('django.contrib.auth.urls')),
-    
-     
+    path('<str:room_name>/', ramble.views.room, name='room'),     
 ]
