@@ -1,10 +1,16 @@
 from django.urls import path
 from .views import(
-    AccountListView, 
-    AccountDetailView,
+    UserListView, 
+    UserDetailView,
+    UserUpdateView,
+    UserDeleteView,
 )
 
 urlpatterns = [
-    path('', AccountListView.as_view(), name='user_list'),
-    path('user/<int:pk>/', AccountDetailView.as_view(), name='user_detail'),
+    path('<int:pk>/edit/',
+        UserUpdateView.as_view(), name='user_edit'),
+    path('user/<int:pk>/', UserDetailView.as_view(), name='user_detail'),
+    path('<int:pk>/delete/',
+        UserDeleteView.as_view(), name='user_delete'),
+    path('', UserListView.as_view(), name='user_list'),
 ]

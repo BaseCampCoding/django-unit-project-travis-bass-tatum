@@ -9,4 +9,6 @@
         <p>{{object.hide_email}} {{object.email}}</p>
     </div>
 
+<a href="{% url 'user_edit' user.pk %}">Edit</a> |
+<a href="{% url 'user_delete' user.pk %}">Delete</a>
 {% endblock content %}
