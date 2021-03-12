@@ -1,14 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="user-entry">
-        {{object.profile_image}} <h2>{{object.username}}</h2>
-        <p>{{object.last_login}}</p>
-        <p>{{object.is_active}}</p>
-        <p>{{object.date_joined}}</p>
-        <p>{{object.hide_email}} {{object.email}}</p>
+<div class="card mb-3" style="max-width: 540px;">
+<div class="row g-0">
+    <div class="col-md-4">
+        </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{object.profile_image}}</h5>
+                <h5 class="card-title">{{ object.username }}</h5>
+                <p class="card-text">{{ object.is_active }}</p>
+                <p class="card-text">{{ object.date_joined }}</p>
+                <p class="card-text">
+                {% if user.hide_email == True %}
+                {% else %}
+                <p>{{object.email}}</p>
+                {% endif %}
+                </p>
+                <p class="card-text"><small class="text-muted">{{ object.last_login }}</small></p>
+            </div>
+        </div>
     </div>
-
+</div>
 <a href="{% url 'user_edit' user.pk %}">Edit</a> |
 <a href="{% url 'user_delete' user.pk %}">Delete</a>
+<p>Back to <a href="{% url 'user_list' %}">User Page</a></p>
 {% endblock content %}
