@@ -28,10 +28,13 @@ class  UserUpdateView(UpdateView):
     model = User
     fields = ('username', 'email', 'hide_email',)
     template_name = 'user_edit.html'
+    success_url = reverse_lazy('user_list')
+
 
 class  UserDeleteView(DeleteView):
     model = User
     template_name = 'user_delete.html'
+    success_url = reverse_lazy('user_list')
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
