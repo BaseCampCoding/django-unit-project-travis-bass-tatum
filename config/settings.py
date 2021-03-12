@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 from environs import Env
 env = Env()
@@ -92,10 +92,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': DB_NAME,
+        'TEST': {
+            'NAME': os.path.join(BASE_DIR, 'db_test.postgresql_psycopg2'),
+        },
         'USER': DB_USER,
         'PASSWORD': DB_PASSWORD,
         'HOST': 'localhost',
         'PORT': '5432'
+        
     }
 }
 
