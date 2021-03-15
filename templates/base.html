@@ -35,14 +35,14 @@
           </li>
           {% if user.is_authenticated %}
               <li class="nav-item">
-                <a class="nav-link navbar-brand" href="">Chats</a>
+                <a class="nav-link navbar-brand" href="{% url 'chat' %}">Chats</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {{ user.username }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                  <li><a class="dropdown-item" href="{% url 'user_detail' user.pk %}">Profile</a></li>
                   <li><a class="dropdown-item" href="#">Friends</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>

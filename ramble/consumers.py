@@ -44,4 +44,3 @@ class ChatConsumer(AsyncWebsocketConsumer):
             'message': message
         }))
 
-
