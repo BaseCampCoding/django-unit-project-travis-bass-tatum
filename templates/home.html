@@ -10,32 +10,31 @@
     <title>Chat Rooms</title>
 </head>
 <body>
-    What chat room would you like to enter?<br>
-    <input id="room-name-input" type="text" size="100"><br>
-    <input id="room-name-submit" type="button" value="Enter">
-    {% if user.is_authenticated %}
-        <br>
-        Hi {{ user.username }}!
-        <p><a href="{% url 'logout' %}">Log Out</a></p>
-    {% else %}
-        <br>
-        <a href="{% url 'login' %}">Log In</a> |
-        <a href="{% url 'signup' %}">Sign Up</a>
-    {% endif %}
+    <div class="container">
+                <div class="row justify-content-center">
+                        <div class="card-body">
+                            <form class="form-sigin justify-content-center text-center" method="POST">
+                                What chat room would you like to enter?<br>
+                                <input id="room-name-input" type="text" size="25"><br>
+                                <input id="room-name-submit" type="button" class="btn btn-success my-2" value="Enter">
+                                <script>
+                                    document.querySelector('#room-name-input').focus();
+                                    document.querySelector('#room-name-input').onkeyup = function(e) {
+                                        if (e.keyCode === 13) {  // enter, return
+                                            document.querySelector('#room-name-submit').click();
+                                        }
+                                    };
 
-    <script>
-        document.querySelector('#room-name-input').focus();
-        document.querySelector('#room-name-input').onkeyup = function(e) {
-            if (e.keyCode === 13) {  // enter, return
-                document.querySelector('#room-name-submit').click();
-            }
-        };
-
-        document.querySelector('#room-name-submit').onclick = function(e) {
-            var roomName = document.querySelector('#room-name-input').value;
-            window.location.pathname = roomName + '/';
-        };
-    </script>
+                                    document.querySelector('#room-name-submit').onclick = function(e) {
+                                        var roomName = document.querySelector('#room-name-input').value;
+                                        window.location.pathname = roomName + '/';
+                                    };
+                                </script>
+                            </form>
+                        </div>
+                </div>
+    </div>
+        
 </body>
 </html>
 
