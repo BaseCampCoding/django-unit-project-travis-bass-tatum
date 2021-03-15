@@ -7,12 +7,8 @@
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
-<<<<<<< HEAD
-                        <h5 class="card-title">{{ user.username }}</h5>
-=======
                     </div>
                         <a href="{% url 'user_detail' user.pk %}"><h5 class="card-title">{{ user.username }}</h5></a>
->>>>>>> f75816b7b0f30cfc016ab74cd54dfc8f10451e20
                         <p class="card-text">{{ user.is_active }}</p>
                         <p class="card-text">{{ user.date_joined }}</p>
                         {% if user.hide_email == True %}
