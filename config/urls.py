@@ -23,6 +23,7 @@ import ramble.views
 from ramble.views import (
     HomeView,
     SignUpView,
+    PostCreateView,
 
 )
 
@@ -34,5 +35,6 @@ urlpatterns = [
     path('signup/', SignUpView.as_view(), name="signup"),
     path('registration/', include('django.contrib.auth.urls')),
     path('chat/<str:room_name>/', ramble.views.room, name='room'),
-    path('chat/public1/', ramble.views.room1, name='public1'),     
+    path('chat/public1/', ramble.views.room1, name = 'public1'),
+    path('post/', PostCreateView.as_view(),name='posts')    
 ]

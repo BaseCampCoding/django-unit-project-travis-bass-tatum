@@ -8,6 +8,7 @@ from django.views.generic.edit import (
 from django.urls import reverse_lazy
 from accounts.forms import CustomUserCreationForm
 from accounts.models import User
+from .models import Post
 
 # Create your views here.
 
@@ -35,6 +36,29 @@ class  UserDeleteView(DeleteView):
     model = User
     template_name = 'user_delete.html'
     success_url = reverse_lazy('user_list')
+
+class PostCreateView(CreateView):
+    model = Post
+    template_name = 'post_new.html'
+    fields = ('title', 'body', 'author',)
+
+class PostListView(ListView):
+    model = Post
+    context_object_name = 'posts'
+    template_name = 'post_list.html'
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'post_detail.html'
+
+class PostUpdateView(UpdateView):
+    model = Post
+    fields = ('title', 'body',)
+    template_name = 'post_edit.html'
+
+class PostDeleteView(DeleteView):
+    model = Post
+    template_name = 'post_delete.html'
+    success_url = reverse_lazy('post_list')
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
