@@ -1,12 +1,23 @@
 {% extends 'base.html' %}
+ {% load static %} 
+ {% block title %} Ramble {% endblock title %} 
+ 
+ {% block content %}
 
-{% load static %}
-
-{% block title %} Ramble {% endblock title %}
-
-
-
-{% block content %}
+<h1 class="text-center justify-content-center my-4">Welcome To Ramble!</h1>
+<p class="text-center my-2"
+  >Ramble is an online chat application that will have you chat with other users
+  via public or private chat!</p
+>
+<p class="text-center my-2"> Come Join the Community!!</p>
+<div class="text-center my-4">
+  <img
+    src="{% static 'images/ramble_logo.png/' %}"
+    alt="app-logo"
+    height="100"
+    width="100"
+  />
+</div>
     
         <h1 class="text-center justify-content-center my-4">Welcome To Ramble!</h1>
             <p class="text-center my-2">Ramble is an online chat application that will have you chat with other users via public or private chat!</p>
@@ -14,4 +25,10 @@
             <div class="text-center my-4">
                 <img src="{% static 'images/ramble_logo.png/' %}" alt="app-logo" height="100" width="100" />
             </div>
+
+            <a href="{% url 'public1' %}">Public Room 1</a>
+<a href="{% url 'public2' %}">Public Room 2</a>
+<a href="{% url 'public3' %}">Public Room 3</a>
+<a href="{% url 'public4' %}">Public Room 4</a>
+<a href="{% url 'public5' %}">Public Room 5</a>
 {% endblock content %}

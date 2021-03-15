@@ -75,5 +75,25 @@ def room1(request):
         
     })
 
+def room2(request):
+    return render(request, 'chat/room2.html', {
+        
+    })
+
+def room3(request):
+    return render(request, 'chat/room3.html', {
+        
+    })
+
+def room4(request):
+    return render(request, 'chat/room4.html', {
+        
+    })
+
+def room5(request):
+    return render(request, 'chat/room5.html', {
+        
+    })
+
 def chat(request):
     return render(request, 'chat/chat.html', {})
