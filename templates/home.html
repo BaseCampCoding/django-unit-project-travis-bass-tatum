@@ -1,1 +1,13 @@
-<a href="{% url 'chat' %}">Chat</a>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Ramble {% endblock title %}
+
+{% block content %}
+
+    <h1 class="text-center justify-content-center">Welcome To Ramble!</h1>
+        <p class="text-center">Ramble is an online chat application that will have you chat with other users via public or private chat!</p>
+        <p class="text-center"> Come Join the Community!!</p>
+        <img src="{% static 'images/ramble_logo.png/' %}" alt="app-logo" />
+{% endblock content %}
