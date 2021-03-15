@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Chat Rooms{% endblock title %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Rooms</title>
+</head>
+<body>
+    <div class="container">
+                <div class="row justify-content-center">
+                        <div class="card-body">
+                            <div class="form-sigin justify-content-center text-center">
+                                What chat room would you like to enter?<br>
+                                <input id="room-name-input" type="text" size="25"><br>
+                                <input id="room-name-submit" type="button" class="btn btn-success my-2" value="Enter">
+                                <script>
+                                    document.querySelector('#room-name-input').focus();
+                                    document.querySelector('#room-name-input').onkeyup = function(e) {
+                                        if (e.keyCode === 13) {  // enter, return
+                                            document.querySelector('#room-name-submit').click();
+                                        }
+                                    };
+
+                                    document.querySelector('#room-name-submit').onclick = function(e) {
+                                        var roomName = document.querySelector('#room-name-input').value;
+                                        window.location.pathname = '/chat/' + roomName + '/';
+                                    };
+                                </script>
+                            </div>
+                        </div>
+                </div>
+    </div>
+        
+</body>
+</html>
+
+{% endblock content %}

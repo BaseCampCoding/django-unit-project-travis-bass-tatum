@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 {% extends 'base.html' %}
 
 {% block title %}Chat Rooms{% endblock title %}
 
 {% block content %}
-<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -20,9 +21,9 @@
         const chatSocket = new WebSocket(
             'ws://'
             + window.location.host
-            + '/ws/chat/'
+            + '/ws/'
             + roomName
-            + '/'
+            + '/public/chat1'
         );
 
         chatSocket.onmessage = function(e) {

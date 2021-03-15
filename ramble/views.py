@@ -42,6 +42,14 @@ class SignUpView(CreateView):
     template_name = "registration/signup.html"
 
 def room(request, room_name):
-    return render(request, 'chat/room.html', {
+    return render(request, 'chat/room.html',  {
         'room_name': room_name
     })
+
+def room1(request):
+    return render(request, 'chat/room1.html', {
+        
+    })
+
+def chat(request):
+    return render(request, 'chat/chat.html', {})

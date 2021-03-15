@@ -28,9 +28,11 @@ from ramble.views import (
 
 urlpatterns = [
     path('', HomeView.as_view(), name="home"),
+    path('chat/', ramble.views.chat, name='chat'),
     path('profiles/', include("ramble.urls")),
     path('admin/', admin.site.urls),
     path('signup/', SignUpView.as_view(), name="signup"),
     path('registration/', include('django.contrib.auth.urls')),
-    path('<str:room_name>/', ramble.views.room, name='room'),     
+    path('chat/<str:room_name>/', ramble.views.room, name='room'),
+    path('public/chat1/', ramble.views.room1, name='chat1'),     
 ]
