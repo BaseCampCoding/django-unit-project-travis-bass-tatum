@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView
+from django.shortcuts import redirect
+from django.conf import settings
 from django.views.generic.edit import (
     CreateView, 
     DeleteView,
@@ -44,6 +46,7 @@ class SignUpView(CreateView):
     template_name = "registration/signup.html"
 
 def room(request, room_name):
+
     return render(request, 'chat/room.html',  {
         'room_name': room_name
     })
