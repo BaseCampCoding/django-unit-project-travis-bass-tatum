@@ -1,24 +1,22 @@
-{% extends 'base.html' %}
-
-{% block content %}
-    <div class="article-entry">
-        <h2>{{ object.title }}</h2>
-        <p> by {{ object.author }} | {{ object.date }}</p>
-        <p>{{ object.body }}</p>
-        {% if comments.all is not None %}
-             {% for comment in comments.all %}
-                        <p>
-                            <span class="font-weight-bold">
-                                {{ comment.author }} &middot;
-                            </span>
-                            {{ comment }}
-                        </p>
-                    {% endfor %}
-                    {% else %}
-                        None yet...
-                        {% endif %}
-    </div>
-    <p><a href="{% url 'post_edit' post.pk %}">Edit</a>|
-        <a href="{% url 'post_delete' post.pk %}">Delete</a></p>
-    <p>Back to <a href="{% url 'post_list' %}">All Posts</a>.</p>
+{% extends 'base.html' %} {% block content %}
+<div class="article-entry">
+  <h2>{{ object.title }}</h2>
+  <p> by {{ object.author }} | {{ object.date }}</p>
+  <p>{{ object.body }}</p>
+  {% if comments.all is not None %}
+  {% for comment in post.comments.all %}
+  <p>
+    <span class="font-weight-bold"> {{ comment.author }} &middot; </span>
+    {{ comment }}
+  </p>
+  {% endfor %}
+  {% else %}
+  None yet....
+  {% endif %}
+</div>
+<p
+  ><a href="{% url 'post_edit' post.pk %}">Edit</a>|
+  <a href="{% url 'post_delete' post.pk %}">Delete</a></p
+>
+<p>Back to <a href="{% url 'post_list' %}">All Posts</a>.</p>
 {% endblock content %}

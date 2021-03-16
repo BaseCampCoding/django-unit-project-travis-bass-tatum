@@ -9,9 +9,10 @@
     <meta charset="utf-8"/>
     <title>Chat Room</title>
 </head>
+{% if user.is_authenticated %}
 <body>
     <textarea id="chat-log" cols="100" rows="20"></textarea><br>
-    <input id="chat-message-input" type="text" size="100"><br>
+    <input id="chat-message-input" type="text" size="100" maxlength="150" required><br>
     <input id="chat-message-submit" type="button" value="Send">
     {{ room_name|json_script:"room-name" }}
     <script>
@@ -52,6 +53,11 @@
         };
     </script>
 </body>
+{% else %}
+    You are not signed in.<br>
+    <a href="{% url 'login' %}" class="btn btn-outline-primary">Log In</a>
+    <a href="{% url 'signup' %}" class="btn btn-outline-light">Sign Up</a>
+{% endif %}
 </html>
 
 {% endblock content %}
