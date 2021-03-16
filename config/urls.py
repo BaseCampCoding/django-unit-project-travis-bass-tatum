@@ -41,11 +41,11 @@ urlpatterns = [
     path('signup/', SignUpView.as_view(), name="signup"),
     path('registration/', include('django.contrib.auth.urls')),
     path('chat/<str:room_name>/', ramble.views.room, name='room'),
-    path('chat/public1/', ramble.views.room1, name='public1'),
-    path('chat/public2/', ramble.views.room2, name='public2'), 
-    path('chat/public3/', ramble.views.room3, name='public3'), 
-    path('chat/public4/', ramble.views.room4, name='public4'), 
-    path('chat/public5/', ramble.views.room5, name = 'public5'),
+    path('chat/public1/', ramble.views.room, name='public1'),
+    path('chat/public2/', ramble.views.room, name='public2'), 
+    path('chat/public3/', ramble.views.room, name='public3'), 
+    path('chat/public4/', ramble.views.room, name='public4'), 
+    path('chat/public5/', ramble.views.room, name = 'public5'),
     path('posts/', include('posts.urls')),
 
         
