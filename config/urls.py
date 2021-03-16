@@ -30,6 +30,7 @@ from posts.views import(
     PostUpdateView,
     PostDetailView,
     PostDeleteView,
+    CommentCreateView,
 )
 
 urlpatterns = [
@@ -38,6 +39,7 @@ urlpatterns = [
     path('profiles/', include("ramble.urls")),
     path('profiles/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
+    path('comment/', CommentCreateView.as_view(), name='comment' ),
     path('signup/', SignUpView.as_view(), name="signup"),
     path('registration/', include('django.contrib.auth.urls')),
     path('chat/<str:room_name>/', ramble.views.room, name='room'),
@@ -47,6 +49,4 @@ urlpatterns = [
     path('chat/public4/', ramble.views.room, name='public4'), 
     path('chat/public5/', ramble.views.room, name = 'public5'),
     path('posts/', include('posts.urls')),
-
-        
 ]

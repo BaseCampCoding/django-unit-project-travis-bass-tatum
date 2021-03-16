@@ -24,7 +24,7 @@
 {% if user.is_authenticated %}
 <a class="btn btn-outline-dark" href="{% url 'user_edit' user.pk %}">Edit</a>
 <a class="btn btn-outline-dark" href="{% url 'user_delete' user.pk %}">Delete</a>
-<a class="btn btn-outline-dark" href="{% url 'password_change'%}">Change Password</a>
+<a class="btn btn-outline-dark" href="{% url 'password_change' %}">Change Password</a>
 {% endif %}
 <p>Back to <a href="{% url 'user_list' %}">User Page</a></p>
 </div>
