@@ -1,5 +1,5 @@
 from django.views.generic import ListView
-from .models import Post
+from .models import Post, Comment
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import (
@@ -44,3 +44,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         obj = self.get_object()
         return obj.author == self.request.user
+
+class CommentCreateView(CreateView):
+    model = Comment
+    fields = ['post', 'comment', 'author',]
