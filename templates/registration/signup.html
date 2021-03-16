@@ -5,7 +5,9 @@
 {% block title %} Sign Up {% endblock title %}
 {% block content %}
 
-    <h1 class="text-center">Sign Up</h1>
+    <div class="text-center my-4">
+        <img src="{% static 'images/ramble_logo.png' %}" alt="logo" height="100" width="100" />
+    </div>
 
     <style>
         .card-body {
@@ -20,9 +22,9 @@
 
         <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="card">
+                    <div class="card border-0">
                         <div class="card-body">
-                            <form class="form-sigin" method="POST">
+                            <form class="form-sigin align-content-sm-center" method="POST">
                                 {% csrf_token %}
                                 {{ form|crispy }}
                                 <button class="btn  btn-md btn-primary btn-block" type="submit" >Register</button>

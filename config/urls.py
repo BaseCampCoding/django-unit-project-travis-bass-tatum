@@ -23,6 +23,7 @@ import ramble.views
 from ramble.views import (
     HomeView,
     SignUpView,
+    PostCreateView,
 
 )
 
