@@ -8,12 +8,12 @@
                     <span class="text-muted"> by {{ post.author }} | {{ post.date }}</span>
                 </div>
                 <div class="card-body">
-                <p>{{ post.body }}</p>
+                <p>{{ post.body }}</p><br><br>
                 <a href="{% url 'post_edit' post.pk %}">Edit</a>
                 <a href="{% url 'post_delete' post.pk %}">Delete</a>
                 </div>
                 <div class="card-footer">
-                    
+                   
                 </div>
             </div>
         {% endfor %}
