@@ -22,15 +22,21 @@ from django.conf.urls.static import static
 import ramble.views
 from ramble.views import (
     HomeView,
-    SignUpView,
-    PostCreateView,
+    SignUpView,)
 
+from posts.views import(
+    PostCreateView,
+    PostListView,
+    PostUpdateView,
+    PostDetailView,
+    PostDeleteView,
 )
 
 urlpatterns = [
     path('', HomeView.as_view(), name="home"),
     path('chat/', ramble.views.chat, name='chat'),
     path('profiles/', include("ramble.urls")),
+    path('profiles/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('signup/', SignUpView.as_view(), name="signup"),
     path('registration/', include('django.contrib.auth.urls')),
@@ -39,5 +45,8 @@ urlpatterns = [
     path('chat/public2/', ramble.views.room2, name='public2'), 
     path('chat/public3/', ramble.views.room3, name='public3'), 
     path('chat/public4/', ramble.views.room4, name='public4'), 
-    path('chat/public5/', ramble.views.room5, name='public5'),      
+    path('chat/public5/', ramble.views.room5, name = 'public5'),
+    path('posts/', include('posts.urls')),
+
+        
 ]
