@@ -33,6 +33,9 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = ('title', 'body',)
     template_name = 'posts/post_edit.html'
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
