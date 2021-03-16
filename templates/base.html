@@ -22,9 +22,8 @@
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg color-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand text-lg-start" href="#">Ramble</a>
+<nav class="navbar navbar-expand-lg color-primary ml-auto">
+  <div class="container-fluid justify-content-end">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,12 +33,12 @@
             <a class="nav-link navbar-brand active" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           {% if user.is_authenticated %}
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-auto">
                  <a class="nav-link navbar-brand" href="{% url 'post_new' %}" > + New Post</a>
                 </li>
               </ul>
-              <li class="nav-item">
+              <li class="nav-item mx-auto">
                 <a class="nav-link navbar-brand" href="{% url 'chat' %}">Chats</a>
               </li>
               <li class="nav-item dropdown">
@@ -48,15 +47,10 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="{% url 'user_detail' user.pk %}">Profile</a></li>
-                  <li><a class="dropdown-item" href="#">Friends</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
                 </ul>
               </li>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn navbar-brand btn-outline-success" type="submit">Search</button>
-            </form>
           {% else %}
             <form class="form-inline ml-auto">
               <a href="{% url 'login' %}" class="btn btn-outline-primary">Log In</a>
