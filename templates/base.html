@@ -11,19 +11,32 @@
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" 
     crossorigin="anonymous">
     <style>
+      .navbar {
+        padding: 5px;
+        margin-inline:initial;
+
+
+      }
       .color-primary{
         background-color: rgb(50, 74, 94);
       }
 
-      .color-primary .navbar-brand, 
-      .color-primary .navbar-text { 
-          color: rgb(230, 233, 238); 
+       .navbar-brand, 
+       .navbar-text { 
+          color: #FFD05B; 
+          position: relative;
       } 
+      .navbar-brand:hover {
+        color: white;
+
+      }
+      
+
     </style>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg color-primary ml-auto">
-  <div class="container-fluid justify-content-end">
+<body style="background-color: #FFD05B;">
+<nav class="navbar navbar-expand-lg color-primary">
+  <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,7 +46,7 @@
             <a class="nav-link navbar-brand active" aria-current="page" href="{% url 'home' %}">Home</a>
           </li>
           {% if user.is_authenticated %}
-              <ul class="navbar-nav ml-auto">
+              <ul class="navbar-nav mr-auto">
                 <li class="nav-item mx-auto">
                  <a class="nav-link navbar-brand" href="{% url 'post_new' %}" > + New Post</a>
                 </li>
@@ -42,10 +55,10 @@
                 <a class="nav-link navbar-brand" href="{% url 'chat' %}">Chats</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link navbar-brand dropdown-toggle align-items-right" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"                                                      >
                   {{ user.username }}
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="{% url 'user_detail' user.pk %}">Profile</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>

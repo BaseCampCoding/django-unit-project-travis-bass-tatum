@@ -12,10 +12,11 @@
             <div class="text-center my-4">
                 <img src="{% static 'images/ramble_logo.png/' %}" alt="app-logo" height="100" width="100" />
             </div>
-
-            <a href="{% url 'public1' %}">Public Room 1</a>
-<a href="{% url 'public2' %}">Public Room 2</a>
-<a href="{% url 'public3' %}">Public Room 3</a>
-<a href="{% url 'public4' %}">Public Room 4</a>
-<a href="{% url 'public5' %}">Public Room 5</a>
+            <div class="card border-0 align-items-center" style="background-color: #FFD05B;">
+                <a href="{% url 'public1' %}" style= "color:rgb(50, 74, 94);">Public Room 1</a><br>
+                <a href="{% url 'public2' %}" style= "color:rgb(50, 74, 94);">Public Room 2</a><br>
+                <a href="{% url 'public3' %}" style= "color:rgb(50, 74, 94);">Public Room 3</a><br>
+                <a href="{% url 'public4' %}" style= "color:rgb(50, 74, 94);">Public Room 4</a><br>
+                <a href="{% url 'public5' %}" style= "color:rgb(50, 74, 94);">Public Room 5</a><br>
+            </div>
 {% endblock content %}

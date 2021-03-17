@@ -11,8 +11,10 @@
 </head>
 {% if user.is_authenticated %}
 <body>
-    <textarea id="chat-log" cols="100" rows="20"></textarea><br>
-    <input id="chat-message-input" type="text" size="100" maxlength="150" required><br>
+    <br>
+    <br>
+    <textarea style="background-color: rgb(50,74,94); text" id="chat-log" cols="100" rows="20"></textarea><br>
+    <input style="color: rgb(50,74,94); " id="chat-message-input" type="text" size="100" maxlength="150" required><br><br>
     <input id="chat-message-submit" type="button" value="Send">
     {{ room_name|json_script:"room-name" }}
     <script>
