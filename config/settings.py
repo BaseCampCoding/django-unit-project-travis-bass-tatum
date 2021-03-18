@@ -98,7 +98,7 @@ DATABASES = {
         },
         'USER': DB_USER,
         'PASSWORD': DB_PASSWORD,
-        'HOST': 'localhost',
+        'HOST': '.herokuapp.com',
         'PORT': '5432'
         
     }
