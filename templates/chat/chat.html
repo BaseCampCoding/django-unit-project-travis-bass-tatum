@@ -2,6 +2,13 @@
 
 {% block title %}Chat Rooms{% endblock title %}
 
+<style>
+    .btn {
+        background-color: rgb(50, 74, 94);
+        color: #FFD05B;
+    }
+</style>
+
 {% block content %}
 <!DOCTYPE html>
 <html>
@@ -17,11 +24,11 @@
                                 What chat room would you like to enter?<br>
                                 <input id="room-name-input" type="text" size="25"><br>
                                 {% if user.is_authenticated %}
-                                    <input id="room-name-submit" type="button" class="btn btn-success my-2" value="Enter">
+                                    <input style="background-color: rgb(50, 74, 94); color: #FFD05B;" id="room-name-submit" type="button" class="btn my-2" value="Enter">
                                 {% else %}
                                     You are not signed in.<br>
-                                    <a href="{% url 'login' %}" class="btn btn-outline-primary">Log In</a>
-                                    <a href="{% url 'signup' %}" class="btn btn-outline-success">Sign Up</a>
+                                    <a href="{% url 'login' %}" class="btn">Log In</a>
+                                    <a href="{% url 'signup' %}" class="btn">Sign Up</a>
                                 {% endif %}
                                 <script>
                                     document.querySelector('#room-name-input').focus();

@@ -15,7 +15,9 @@
             padding: 15px;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
-            
+        }
+        .btn:hover {
+            color: white;
         }
     </style>
     <body>
@@ -24,10 +26,10 @@
                 <div class="row justify-content-center" style="background-color: #FFD05B;">
                     <div class="card border-0" style="background-color: #FFD05B;">
                         <div class="card-body">
-                            <form class="form-sigin align-content-sm-center" method="POST">
+                            <form style="color: rgb(50, 74, 94);" class="form-sigin align-content-sm-center" method="POST">
                                 {% csrf_token %}
                                 {{ form|crispy }}
-                                <button class="btn  btn-md btn-primary btn-block" type="submit" >Register</button>
+                                <button class="btn  btn-md btn-block" type="submit" >Register</button>
                                 
                 
                             </form>

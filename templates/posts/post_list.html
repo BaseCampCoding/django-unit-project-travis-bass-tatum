@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
     {% block title %} Posts {% endblock title %}
+    <style>
+        a:hover {
+            color: white;
+
+        }
+    </style>
     {% block content %}
         {% for post in object_list %}
-            <div class="card">
+            <div class="card my-4" style="background-color: rgb(50,74,94); color: #FFD05B;">
                 <div class="card-header">
                     <span class="font-weight-bold">{{ post.title }}</span> &middot;
                     <span class="text-muted"> by {{ post.author }} | {{ post.date }}</span>
