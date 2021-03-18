@@ -47,4 +47,9 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class CommentCreateView(CreateView):
     model = Comment
-    fields = ['post', 'comment', 'author',]
+    fields = ['post', 'comment',]
+    success_url = reverse_lazy("post_list")
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)

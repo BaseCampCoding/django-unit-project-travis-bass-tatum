@@ -6,7 +6,7 @@
 {% block content %}
 
     <div class="text-center my-4">
-        <img src="{% static 'images/ramble_logo.png' %}" alt="logo" height="100" width="100" />
+        <link rel="logo" type="images/png" href="{% static 'images/ramble_logo.png' %}" alt="app-logo" height="100" width="100"/>
     </div>
 
     <style>
@@ -15,19 +15,21 @@
             padding: 15px;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
-            
+        }
+        .btn:hover {
+            color: white;
         }
     </style>
     <body>
 
-        <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="card border-0">
+        <div class="container-fluid" style="background-color: #FFD05B;">
+                <div class="row justify-content-center" style="background-color: #FFD05B;">
+                    <div class="card border-0" style="background-color: #FFD05B;">
                         <div class="card-body">
-                            <form class="form-sigin align-content-sm-center" method="POST">
+                            <form style="color: rgb(50, 74, 94);" class="form-sigin align-content-sm-center" method="POST">
                                 {% csrf_token %}
                                 {{ form|crispy }}
-                                <button class="btn  btn-md btn-primary btn-block" type="submit" >Register</button>
+                                <button class="btn  btn-md btn-block" type="submit" >Register</button>
                                 
                 
                             </form>
