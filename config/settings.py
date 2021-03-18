@@ -93,9 +93,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': DB_NAME,
-        'TEST': {
-            'NAME': os.path.join(BASE_DIR, 'db_test.postgresql_psycopg2'),
-        },
+
         'USER': DB_USER,
         'PASSWORD': DB_PASSWORD,
         'HOST': '.herokuapp.com',
@@ -154,7 +152,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [('.herokuapp.com', 6379)],
+            "hosts": [('rambleaway.herokuapp.com', 6379)],
         },
     },
 }
