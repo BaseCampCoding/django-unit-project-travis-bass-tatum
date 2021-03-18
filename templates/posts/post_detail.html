@@ -14,10 +14,9 @@
   None yet....
   {% endif %}
 </div>
-<p style="color: rgb(50, 74, 94);"
-  ><a style="color:rgb(50, 74, 94);"  href="{% url 'post_edit' post.pk %}">Edit</a>|
-  <a style="color:rgb(50, 74, 94);" href="{% url 'post_delete' post.pk %}">Delete</a></p
->
+<p style="color: rgb(50, 74, 94);">
+  <a style="color:rgb(50, 74, 94);"  href="{% url 'post_edit' post.pk %}">Edit</a>|
+  <a style="color:rgb(50, 74, 94);" href="{% url 'post_delete' post.pk %}">Delete</a>|
+  <a style="color:rgb(50, 74, 94);" href="{% url 'comment' %}">Comment</a></p>
 <p style="color:rgb(50, 74, 94);">Back to <a style="color: rgb(50, 74, 94);" href="{% url 'post_list' %}">All Posts</a>.</p>
-<a style="color: rgb(50, 74, 94);" href="{% url 'comment' %}"></a>
 {% endblock content %}

@@ -35,4 +35,12 @@
 {% endif %}
 <p style="color: rgb(50,74,94);" >Back to <a href="{% url 'user_list' %}" style="color:rgb(50,74,94);">User Page</a></p>
 </div>
+
+<h2>Posts made</h2>
+{% for post in posts.posts_made.all %}
+<h2> {{post.title}} </h2>
+<p> {{post.body}} </p>
+<p> {{post.time}} </p>
+<p> {{post.date}} </p>
+{% endfor %}
 {% endblock content %}
