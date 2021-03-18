@@ -10,7 +10,8 @@ psycopg2-binary = "==2.8.5"
 whitenoise = "==5.1.0"
 pillow = "*"
 django-crispy-forms = "*"
-gunicorn = "==19.9.0"
+daphne = "*"
+channels-redis = "*"
 
 [dev-packages]
 

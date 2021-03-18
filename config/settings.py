@@ -90,16 +90,10 @@ DB_NAME = 'ramble_app'
 DB_USER = "django"
 DB_PASSWORD = "password"
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': DB_NAME,
-
-        'USER': DB_USER,
-        'PASSWORD': DB_PASSWORD,
-        'HOST': '.herokuapp.com',
-        'PORT': '5432'
+    'default': env.dj_db_url("DATABASE_URL")
         
-    }
+        
+    
 }
 
 
@@ -149,10 +143,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ASGI_APPLICATION = 'config.asgi.application'
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('rambleaway.herokuapp.com', 6379)],
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [env.str("REDIS_URL")],
         },
     },
 }
