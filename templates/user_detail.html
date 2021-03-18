@@ -10,7 +10,11 @@
         </div>
                 <h5 class="card-title">{{object.profile_image}}</h5>
                 <h5 class="card-title">{{ object.username }}</h5>
-                <p class="card-text">{{ object.is_active }}</p>
+                {% if user.is_active == True %}
+                        <p class="card-text"> Active </p>
+                {% else %}
+                        <p class="card-text">Not Active</p>
+                {% endif %}
                 <p class="card-text">{{ object.date_joined }}</p>
                 <p class="card-text" style="background-color: #FFD05B;">
                 {% if user.hide_email == True %}
