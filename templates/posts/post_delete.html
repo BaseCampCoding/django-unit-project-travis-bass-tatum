@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Delete</h1>
-    <form action="" method="post">{% csrf_token %}
-        <p>Are you sure you want to delete "{{ post.title }}"?</p>
+    <h1 style="color: rgb(50, 74, 94);">Delete</h1>
+    <form style="color: rgb(50,74,94);" action="" method="post">{% csrf_token %}
+        <p style="color: rgb(50, 74, 94);">Are you sure you want to delete "{{ post.title }}"?</p>
         <button class="btn btn-danger ml-2" type="submit">Confirm</button>
     </form>
 {% endblock content %}

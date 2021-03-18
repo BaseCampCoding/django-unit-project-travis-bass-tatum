@@ -30,6 +30,20 @@
         color: white;
 
       }
+      .dropdown-item {
+        color:#FFD05B;
+      }
+      .dropdown-item:hover {
+        color: white;
+        background-color:rgb(50, 74, 94);
+      }
+      .btn {
+        color: #FFD05B;
+        background-color:rgb(50, 74, 94);
+      }
+      .btn:hover {
+        color: white;
+      }
       
 
     </style>
@@ -58,16 +72,16 @@
                 <a class="nav-link navbar-brand dropdown-toggle align-items-right" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"                                                      >
                   {{ user.username }}
                 </a>
-                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="{% url 'user_detail' user.pk %}">Profile</a></li>
-                  <li><hr class="dropdown-divider"></li>
+                <ul style="background-color: rgb(50, 74, 94);" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <li><a  class="dropdown-item" href="{% url 'user_detail' user.pk %}">Profile</a></li>
+                  <li><hr style="color: #FFD05B;" class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="{% url 'logout' %}">Log Out</a></li>
                 </ul>
               </li>
           {% else %}
             <form class="form-inline ml-auto">
-              <a href="{% url 'login' %}" class="btn btn-outline-primary">Log In</a>
-              <a href="{% url 'signup' %}" class="btn btn-outline-light">Sign Up</a>
+              <a href="{% url 'login' %}" class="btn">Log In</a>
+              <a href="{% url 'signup' %}" class="btn">Sign Up</a>
             </form>
           {% endif %}
     </div>

@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
-<div class="article-entry">
-  <h2>{{ object.title }}</h2>
+<div class="article-entry my-3" style="background-color: rgb(50,74,94); color: #FFD05B;">
+  <h2 style="background-color: rgb(50, 74,94); color:#FFD05B;">{{ object.title }}</h2>
   <p> by {{ object.author }} | {{ object.date }}</p>
   <p>{{ object.body }}</p>
   {% if comments.all is not None %}
@@ -14,10 +14,10 @@
   None yet....
   {% endif %}
 </div>
-<p
-  ><a href="{% url 'post_edit' post.pk %}">Edit</a>|
-  <a href="{% url 'post_delete' post.pk %}">Delete</a></p
+<p style="color: rgb(50, 74, 94);"
+  ><a style="color:rgb(50, 74, 94);"  href="{% url 'post_edit' post.pk %}">Edit</a>|
+  <a style="color:rgb(50, 74, 94);" href="{% url 'post_delete' post.pk %}">Delete</a></p
 >
-<p>Back to <a href="{% url 'post_list' %}">All Posts</a>.</p>
-<a href="{% url 'comment' %}"></a>
+<p style="color:rgb(50, 74, 94);">Back to <a style="color: rgb(50, 74, 94);" href="{% url 'post_list' %}">All Posts</a>.</p>
+<a style="color: rgb(50, 74, 94);" href="{% url 'comment' %}"></a>
 {% endblock content %}
