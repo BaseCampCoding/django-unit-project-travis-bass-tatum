@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Edit</h1>
-    <form action="" method="post">
+    <h1 style="color: rgb(50,74,94);">Edit</h1>
+    <form style="color: rgb(50, 74, 94);" action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn ml-2" type="submit">Update</button>
+    <button class="btn ml-2 " type="submit">Update</button>
     </form>
 {% endblock content %}

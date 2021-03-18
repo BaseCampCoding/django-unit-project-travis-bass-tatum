@@ -5,10 +5,10 @@
 
 {% block content %}
     {% for user in object_list  %}
-        <div style="background-color: #FFD05B; max-width: 500px; border-color: #FFD05B;" class="card mb-3 my-2 text-center">
+        <div style="background-color: rgb(50, 74, 94); max-width: 500px; border-color: #FFD05B;" class="card mb-3 m-auto my-2 text-center">
             <div class="row g-0">
-                <div class="col-md-4" style="background-color: #FFD05B; color: rgb(50, 74, 94);">
-                    <a style="color: rgb(50, 74, 94);"  href="{% url 'user_detail' user.pk %}"><h5 style="color:rgb(50, 74, 94);" class="card-title">{{ user.username }}</h5></a>
+                <div class="col-md-4 m-auto" style="background-color: rgb(50, 74, 94); color: #FFD05B;">
+                    <a style="color: #FFD05B;"  href="{% url 'user_detail' user.pk %}"><h5 style="color:#FFD05B;;" class="card-title">{{ user.username }}</h5></a>
                     {% if user.is_active == True %}
                         <p class="card-text"> Active </p>
                     {% else %}
@@ -19,8 +19,8 @@
                     {% else %}
                     <p class="card-text">{{ user.email }}</p>
                     {% endif %}
-                    <p style="border-color: #FFD05B;" class="card-text"><small class="text-muted">{{ user.last_login }}</small></p>
-                </div>
+                    <p style="border-color: #FFD05B;" class="card-text"><small style="color:#FFD05B;" class="text-muted">{{ user.last_login }}</small></p>
+                </div><br>
             </div>
         </div>
     <br />
