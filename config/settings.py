@@ -86,22 +86,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-DB_NAME = 'ramble_app'
-DB_USER = "django"
-DB_PASSWORD = "password"
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': DB_NAME,
-        'TEST': {
-            'NAME': os.path.join(BASE_DIR, 'db_test.postgresql_psycopg2'),
-        },
-        'USER': DB_USER,
-        'PASSWORD': DB_PASSWORD,
-        'HOST': 'localhost',
-        'PORT': '5432'
-        
-    }
+    'default': env.dj_db_url("DATABASE_URL")   
 }
 
 
@@ -152,7 +139,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ASGI_APPLICATION = 'config.asgi.application'
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
-    }
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [env.str("REDIS_URL")],
+        },
+    },
 }
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
