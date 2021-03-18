@@ -8,7 +8,7 @@
     </style>
     {% block content %}
         {% for post in object_list %}
-            <div class="card my-4" style="background-color: rgb(50,74,94); color: #FFD05B;">
+            <div class="card m-auto my-4" style="background-color: rgb(50,74,94); color: #FFD05B; max-width: 510px;">
                 <div class="card-header">
                     <span class="font-weight-bold">{{ post.title }}</span> &middot;
                     <span class="text-muted"> by {{ post.author }} | {{ post.date }}</span>
