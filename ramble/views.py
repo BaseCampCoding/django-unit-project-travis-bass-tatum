@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from django.shortcuts import redirect
 from django.conf import settings
@@ -11,7 +11,7 @@ from django.views.generic.edit import (
 from django.urls import reverse_lazy
 from accounts.forms import CustomUserCreationForm
 from accounts.models import User
-from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model 
 
 # Create your views here.
 
@@ -29,17 +29,20 @@ class  UserDetailView(DetailView):
     template_name = "user_detail.html"
  
 
-class  UserUpdateView(UpdateView):
+class  UserUpdateView(LoginRequiredMixin, UpdateView):
     model = User
     fields = ('username', 'email', 'hide_email',)
     template_name = 'user_edit.html'
     success_url = reverse_lazy('user_list')
+    
 
 
-class  UserDeleteView(DeleteView):
+class  UserDeleteView(LoginRequiredMixin, DeleteView):
     model = User
     template_name = 'user_delete.html'
     success_url = reverse_lazy('user_list')
+  
+    
 
 
 class SignUpView(CreateView):
