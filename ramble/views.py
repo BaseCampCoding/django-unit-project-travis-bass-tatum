@@ -11,6 +11,7 @@ from django.views.generic.edit import (
 from django.urls import reverse_lazy
 from accounts.forms import CustomUserCreationForm
 from accounts.models import User
+from django.contrib.auth import get_user_model
 
 # Create your views here.
 
@@ -24,8 +25,8 @@ class  UserListView(ListView):
     template_name = 'user_list.html'
 
 class  UserDetailView(DetailView):
-    model = User
-    template_name = 'user_detail.html'
+    model = get_user_model()
+ 
 
 class  UserUpdateView(UpdateView):
     model = User
