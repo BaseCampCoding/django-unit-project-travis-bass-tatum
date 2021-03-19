@@ -53,3 +53,6 @@ class CommentCreateView(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+class CommentListView(LoginRequiredMixin, ListView):
+    model = Comment
+    context_object_name = 'comments'

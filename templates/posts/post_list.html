@@ -10,20 +10,17 @@
         {% for post in object_list %}
             <div class="card m-auto my-4" style="background-color: rgb(50,74,94); color: #FFD05B; max-width: 510px;">
                 <div class="card-header">
-                    <span class="font-weight-bold">{{ post.title }}</span> &middot;
+                    <span class="font-weight-bold"><a style="color:#FFD05B;" href="{% url 'post_detail' post.pk %}"> {{ post.title }} </a></span> &middot;
                     <span class="text-muted"> by {{ post.author }} | {{ post.date }}</span>
                 </div>
                 <div class="card-body">
                 <p>{{ post.body }}</p><br><br>
-                <a href="{% url 'post_edit' post.pk %}">Edit</a>
-                <a href="{% url 'post_delete' post.pk %}">Delete</a>
-                <a href="{% url 'comment' %}">Comment</a>
+                <a style="color:#FFD05B;" href="{% url 'post_edit' post.pk %}">Edit</a>
+                <a style="color: #FFD05B;" href="{% url 'post_delete' post.pk %}">Delete</a>
+                <a style="color: #FFD05B;" href="{% url 'comment' %}">Comment</a>
                 </div>
-                <div class="card-footer">
-                   {% for comment in posts.comment.all %}
-                   <p>{{ comment.comment }}</p>
-                   {% endfor %}
-                </div>
+                
+                
             </div>
         {% endfor %}
     {% endblock content %}
