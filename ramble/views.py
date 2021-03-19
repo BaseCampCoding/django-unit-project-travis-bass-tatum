@@ -26,6 +26,7 @@ class  UserListView(ListView):
 
 class  UserDetailView(DetailView):
     model = get_user_model()
+    template_name = "user_detail.html"
  
 
 class  UserUpdateView(UpdateView):
