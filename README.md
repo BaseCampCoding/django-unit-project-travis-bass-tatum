@@ -8,6 +8,6 @@ A user is able to enter a public chat and begin chatting immediately, or they ca
 Along with our chat room feature, a user can also make and view posts and comments made by other users or themself.  
 
 Features
-chat rooms/custom rooms
-posting and comments
-CRUD funtionality
+- chat rooms/custom rooms
+- posting and comment
+- CRUD funtionality
